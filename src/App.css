@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* margin: 0 auto; */
+  background: lightgray;
+}
+
+.main_div {
+  max-width: 90%;
+  min-height: 500px;
+  background: #fff;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 4px 5px 5px gray;
+}
+
+.icons span:last-child {
+  margin-right: -10px;
+}
+
+.header .icons span:hover {
+  background: #f2f2f2;
+}
+
+.cal {
+  padding: 20px;
+}
+
+.cal ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 100%;
+  text-align: center;
+}
+
+.cal .weeks li {
+  font-weight: 600;
+  cursor: default;
+  color: rgb(5, 110, 102);
+}
+
+.cal .days li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+
+.cal .days {
+  margin-bottom: 20px;
+}
+
+.cal li {
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+
+.days li.inactive {
+  color: #aaaaaa;
+}
+
+.days li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.days li.active::before {
+  background-color: rgb(120, 231, 222);
+}
+
+.days li:not(.active):hover::before {
+  background: lightgray;
+}
+
+.days li.inactive:hover::before {
+  cursor: default;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+}
+
+.icons span {
+  height: auto;
+  width: 100%;
+  margin: 0 1px;
+  cursor: pointer;
+  font-weight: 510;
+  color: #4168af;
+  text-align: center;
+  line-height: 20px;
+  font-size: 1rem;
+  user-select: none;
+  border-radius: 50%;
+}
+
+.datedisplay{
+/* background-color: red; */
+color: rgb(5, 110, 102);
+padding: 25px 30px 10px;
+
+}
+
+
+@media screen and (max-width: 450px) {
+  .cal .weeks li {
+    font-weight: 500;
+  }
+
+  .cal li {
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 360px) {
+  /* .cal .weeks li {
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: default;
+   
+    color: rgb(5, 110, 102);
+  } */
+
+
+  .cal li {
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 0.8rem;
+  }
+}
